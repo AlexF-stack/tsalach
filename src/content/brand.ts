@@ -18,7 +18,7 @@ export const brandAssets = {
   /** Institutional mark used in presentation block (no CEO portrait yet) */
   ceoPortraitSrc: "/brand/tsalach-logo-clear.png",
   companyProfileSrc: "/company-profile.pdf",
-  companyProfileDownloadName: "TSALACH-Presentation-Institutionnelle.pdf",
+  companyProfileDownloadName: "TSALACH_Presentation_Final.pdf",
   website: "tsalach.ga",
   websiteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.tsalach.ga",
   mashalUrl: process.env.NEXT_PUBLIC_MASHAL_URL ?? "",
@@ -43,8 +43,8 @@ export const brandAssets = {
     titleFr: "Présentation institutionnelle",
   },
   address: {
-    en: "Razel Owendo, BP 18036, Libreville, Gabon",
-    fr: "Razel Owendo, BP 18036, Libreville, Gabon",
+    en: "Razel, Owendo – BP 10336, Libreville, Gabon",
+    fr: "Razel, Owendo – BP 10336, Libreville, Gabon",
   },
   presence: {
     en: "Gabon & International",

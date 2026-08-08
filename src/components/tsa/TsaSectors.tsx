@@ -32,7 +32,7 @@ export function TsaSectors() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {dictionary.subsidiaries.items.map((item, i) => {
             const src = SECTOR_VISUAL[item.id] ?? visuals.skyline;
             const effect =

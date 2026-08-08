@@ -41,11 +41,12 @@ export const domainVisuals: Record<string, string> = {
   ingenierie: visuals.architecture,
 };
 
-/** Secteurs d'impact */
+/** Secteurs d'impact (plaquette finale) */
 export const sectorVisuals: Record<string, string> = {
-  housing: visuals.housing,
-  "public-facilities": visuals.skyline,
-  "urban-infra": visuals.building,
-  territorial: visuals.africaCity,
-  "ppp-projects": visuals.meeting,
+  infrastructures: visuals.dusk,
+  energie: visuals.skyline,
+  agro: visuals.africaCity,
+  commerce: visuals.meeting,
+  immobilier: visuals.residences,
+  finance: visuals.boardroom,
 };

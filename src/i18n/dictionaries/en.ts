@@ -425,29 +425,33 @@ export const en: Dictionary = {
   },
   whyInvest: {
     label: "Why TSALACH",
-    headline: "What sets us apart",
+    headline: "Our competitive advantages",
     intro:
-      "An integrated developer and general contractor — serving States, municipalities, institutions and private investors.",
+      "Key strengths that set us apart and help us create more value for our partners.",
     items: [
       {
+        title: "Multisector expertise",
+        body: "Mastery across multiple sectors to design and deliver integrated, coherent projects.",
+      },
+      {
         title: "Integrated approach",
-        body: "A single counterpart for the entire project lifecycle.",
+        body: "End-to-end support — from idea to commissioning — with a single counterpart.",
       },
       {
-        title: "Dual expertise",
-        body: "Combining technical and financial skills to secure complex projects.",
+        title: "Innovative solutions",
+        body: "Sustainable, effective solutions tailored to the challenges of African territories.",
       },
       {
-        title: "PPP structuring capacity",
-        body: "Mastery of partnership mechanisms between public and private actors.",
+        title: "Financial solidity",
+        body: "A healthy financial structure that underpins project stability and credibility.",
       },
       {
-        title: "Results orientation",
-        body: "Focus on schedule control, cost optimization, execution quality and asset durability.",
+        title: "Operational excellence",
+        body: "Rigorous processes and high standards of quality, schedule control and cost discipline.",
       },
       {
-        title: "Pan-African vision",
-        body: "Deep understanding of African territorial development — with the capacity to operate internationally.",
+        title: "Responsibility & sustainability",
+        body: "ESG criteria embedded in every project for lasting impact.",
       },
     ],
     quote: "Structure. Finance. Deliver.",
@@ -634,14 +638,14 @@ export const en: Dictionary = {
     ],
   },
   closing: {
-    label: "Next step",
-    headline: "Ready to structure your next project?",
+    label: "Commitment",
+    headline: "Together, let's build tomorrow's legacy",
     paragraphs: [
-      "TSALACH S.A. is the trusted partner for real estate and infrastructure across Africa — anchored in Libreville, oriented toward the continent.",
-      "Engineering, financing, construction and project management: a complete response for States, municipalities, institutions and private investors.",
+      "At TSALACH Development & Infrastructures, we believe every well-designed project is a stone laid for a better future.",
+      "Our commitment goes beyond construction: we build lasting solutions, create value and open the way to inclusive, responsible development.",
     ],
     quote:
-      "Turning development ambitions into lasting, high-performing achievements that create impact for present and future generations.",
+      "The future belongs to those who build it today. Let's build it together.",
     cta: "Start the conversation",
   },
   insights: {
@@ -656,7 +660,7 @@ export const en: Dictionary = {
   approach: {
     label: "Our DNA",
     intro:
-      "Five values that shape how we design, finance and deliver lasting development.",
+      "Our values shape our identity and guide every action. They are the foundation of the trust we build with our partners.",
     values: [
       {
         title: "Commitment",
@@ -687,46 +691,65 @@ export const en: Dictionary = {
   },
   subsidiaries: {
     label: "Sectors",
-    headline: "Where impact matters most",
+    headline: "Priority intervention sectors",
     intro:
-      "We focus development on sectors with strong impact for African territories.",
+      "We focus our resources and expertise on strategic sectors with strong growth potential and lasting impact.",
     tagline:
-      "Housing. Public facilities. Urban infrastructure. Territories. PPP.",
+      "Infrastructure. Energy. Agribusiness. Trade & services. Real estate. Finance.",
     visitSite: "Visit website",
     items: [
       {
-        id: "housing",
-        name: "Housing",
-        sector: "Housing",
-        services: ["Reducing the housing deficit"],
+        id: "infrastructures",
+        name: "Infrastructure",
+        sector: "Infrastructure",
+        services: [
+          "Transport infrastructure, civil works, buildings and structural urban developments.",
+        ],
         logoSrc: "/brand/tsalach-logo-clear.png",
       },
       {
-        id: "public-facilities",
-        name: "Public facilities",
-        sector: "Public facilities",
-        services: ["Modernizing services for populations"],
+        id: "energie",
+        name: "Energy",
+        sector: "Energy",
+        services: [
+          "Production, distribution and sustainable energy solutions for growing quality-energy needs.",
+        ],
         logoSrc: "/brand/tsalach-logo-clear.png",
       },
       {
-        id: "urban-infra",
-        name: "Urban infrastructure",
-        sector: "Urban infrastructure",
-        services: ["Improving mobility and quality of life"],
+        id: "agro",
+        name: "Agribusiness",
+        sector: "Agribusiness",
+        services: [
+          "Processing, agricultural value chains and food security for modern, competitive agriculture.",
+        ],
         logoSrc: "/brand/tsalach-logo-clear.png",
       },
       {
-        id: "territorial",
-        name: "Territorial development",
-        sector: "Territorial development",
-        services: ["Structuring lasting economic hubs"],
+        id: "commerce",
+        name: "Trade & services",
+        sector: "Trade & services",
+        services: [
+          "Distribution, logistics and services for businesses and individuals supporting market growth.",
+        ],
         logoSrc: "/brand/tsalach-logo-clear.png",
       },
       {
-        id: "ppp-projects",
-        name: "Landmark PPP projects",
-        sector: "Landmark PPP projects",
-        services: ["Accelerating public investment"],
+        id: "immobilier",
+        name: "Real estate",
+        sector: "Real estate",
+        services: [
+          "Real-estate development, housing and commercial spaces tailored to communities and companies.",
+        ],
+        logoSrc: "/brand/tsalach-logo-clear.png",
+      },
+      {
+        id: "finance",
+        name: "Finance & investments",
+        sector: "Finance & investments",
+        services: [
+          "Project financing, strategic investments and innovative, responsible financial solutions.",
+        ],
         logoSrc: "/brand/tsalach-logo-clear.png",
       },
     ],

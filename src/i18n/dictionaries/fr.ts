@@ -190,29 +190,33 @@ export const fr: Dictionary = {
   },
   whyInvest: {
     label: "Pourquoi TSALACH",
-    headline: "Ce qui fait la différence",
+    headline: "Nos avantages compétitifs",
     intro:
-      "Développeur et contractant général intégré — au service des États, collectivités, institutions et investisseurs privés.",
+      "Des atouts clés qui nous distinguent et nous permettent de créer plus de valeur pour nos partenaires.",
     items: [
       {
+        title: "Expertise multisectorielle",
+        body: "Une maîtrise de plusieurs secteurs pour concevoir et réaliser des projets intégrés et cohérents.",
+      },
+      {
         title: "Approche intégrée",
-        body: "Un interlocuteur unique pour l'ensemble du cycle de vie du projet.",
+        body: "Un accompagnement de bout en bout — de l'idée à la mise en service — avec un interlocuteur unique.",
       },
       {
-        title: "Double expertise",
-        body: "Association de compétences techniques et financières pour sécuriser les projets complexes.",
+        title: "Solutions innovantes",
+        body: "Des solutions durables, efficaces et adaptées aux défis des territoires africains.",
       },
       {
-        title: "Capacité de structuration PPP",
-        body: "Maîtrise des mécanismes de partenariat entre acteurs publics et privés.",
+        title: "Solidité financière",
+        body: "Une structure financière saine qui sécurise la stabilité et la crédibilité des projets.",
       },
       {
-        title: "Orientation résultats",
-        body: "Focalisation sur la maîtrise des délais, l'optimisation des coûts, la qualité d'exécution et la durabilité des ouvrages.",
+        title: "Excellence opérationnelle",
+        body: "Des processus rigoureux et des standards élevés de qualité, de délais et de maîtrise des coûts.",
       },
       {
-        title: "Vision panafricaine",
-        body: "Compréhension des enjeux de développement des territoires africains et capacité d'intervention à l'international.",
+        title: "Responsabilité & durabilité",
+        body: "L'intégration des critères ESG au cœur de chaque projet pour un impact pérenne.",
       },
     ],
     quote: "Structurez. Financez. Réalisez.",
@@ -400,13 +404,13 @@ export const fr: Dictionary = {
   },
   closing: {
     label: "Engagement",
-    headline: "Prêts à structurer votre prochain projet ?",
+    headline: "Ensemble, construisons l'héritage de demain",
     paragraphs: [
-      "TSALACH S.A. est le partenaire de confiance des projets immobiliers et d'infrastructures en Afrique — avec Libreville comme ancrage et le continent comme horizon.",
-      "Ingénierie, financement, construction et pilotage : une réponse complète pour les États, collectivités, institutions et investisseurs privés.",
+      "Chez TSALACH Development & Infrastructures, nous croyons que chaque projet bien conçu est une pierre posée pour un avenir meilleur.",
+      "Notre engagement va au-delà de la construction : nous bâtissons des solutions durables, créons de la valeur et ouvrons la voie à un développement inclusif et responsable.",
     ],
     quote:
-      "Transformer les ambitions de développement en réalisations durables, performantes et porteuses d'impact pour les générations présentes et futures.",
+      "L'avenir appartient à ceux qui le construisent aujourd'hui. Construisons-le ensemble.",
     cta: "Lancer la conversation",
   },
   insights: {
@@ -421,7 +425,7 @@ export const fr: Dictionary = {
   approach: {
     label: "Notre ADN",
     intro:
-      "Cinq valeurs qui guident la façon dont nous concevons, finançons et réalisons.",
+      "Nos valeurs fondent notre identité et guident chacune de nos actions. Elles sont le socle de la confiance que nous bâtissons avec nos partenaires.",
     values: [
       {
         title: "Engagement",
@@ -452,46 +456,65 @@ export const fr: Dictionary = {
   },
   subsidiaries: {
     label: "Secteurs",
-    headline: "Là où l'impact compte le plus",
+    headline: "Secteurs prioritaires d'intervention",
     intro:
-      "Nous concentrons notre développement sur des secteurs à fort impact pour les territoires.",
+      "Nous concentrons nos ressources et notre expertise sur des secteurs stratégiques à fort potentiel de croissance et à impact durable.",
     tagline:
-      "Logement. Équipements publics. Infrastructures urbaines. Territoires. PPP.",
+      "Infrastructures. Énergie. Agro-industrie. Commerce & services. Immobilier. Finance.",
     visitSite: "Visiter le site",
     items: [
       {
-        id: "housing",
-        name: "Logement",
-        sector: "Logement",
-        services: ["Réduction du déficit en logements"],
+        id: "infrastructures",
+        name: "Infrastructures",
+        sector: "Infrastructures",
+        services: [
+          "Développement d'infrastructures de transport, d'ouvrages d'art, de bâtiments et d'aménagements urbains structurants.",
+        ],
         logoSrc: "/brand/tsalach-logo-clear.png",
       },
       {
-        id: "public-facilities",
-        name: "Équipements publics",
-        sector: "Équipements publics",
-        services: ["Modernisation des services aux populations"],
+        id: "energie",
+        name: "Énergie",
+        sector: "Énergie",
+        services: [
+          "Production, distribution et solutions énergétiques durables pour répondre aux besoins croissants en énergie de qualité.",
+        ],
         logoSrc: "/brand/tsalach-logo-clear.png",
       },
       {
-        id: "urban-infra",
-        name: "Infrastructures urbaines",
-        sector: "Infrastructures urbaines",
-        services: ["Amélioration de la mobilité et du cadre de vie"],
+        id: "agro",
+        name: "Agro-industrie",
+        sector: "Agro-industrie",
+        services: [
+          "Transformation, chaîne de valeur agricole et sécurité alimentaire pour une agriculture moderne et compétitive.",
+        ],
         logoSrc: "/brand/tsalach-logo-clear.png",
       },
       {
-        id: "territorial",
-        name: "Développement territorial",
-        sector: "Développement territorial",
-        services: ["Structuration de pôles économiques durables"],
+        id: "commerce",
+        name: "Commerce & services",
+        sector: "Commerce & services",
+        services: [
+          "Distribution, logistique et services aux entreprises et aux particuliers pour accompagner la croissance des marchés.",
+        ],
         logoSrc: "/brand/tsalach-logo-clear.png",
       },
       {
-        id: "ppp-projects",
-        name: "Projets structurants PPP",
-        sector: "Projets structurants PPP",
-        services: ["Accélération des investissements publics"],
+        id: "immobilier",
+        name: "Immobilier",
+        sector: "Immobilier",
+        services: [
+          "Développement immobilier, logements et espaces commerciaux adaptés aux besoins des communautés et des entreprises.",
+        ],
+        logoSrc: "/brand/tsalach-logo-clear.png",
+      },
+      {
+        id: "finance",
+        name: "Finance & investissements",
+        sector: "Finance & investissements",
+        services: [
+          "Financement de projets, investissements stratégiques et solutions financières innovantes et responsables.",
+        ],
         logoSrc: "/brand/tsalach-logo-clear.png",
       },
     ],

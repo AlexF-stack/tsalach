@@ -22,6 +22,6 @@ Chaque section de la homepage pointe vers une image distincte autant que possibl
 | `housing.jpg` | Secteur logement |
 | `city-skyline.jpg` | Secteur équipements |
 | `africa-city.jpg` | Ambition |
-| `africa-urban.jpg` | Closing |
+
 
 Mapping code : `src/content/visuals.ts`

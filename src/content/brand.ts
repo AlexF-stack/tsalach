@@ -1,0 +1,53 @@
+export const brandAssets = {
+  name: "TSALACH",
+  holdingName: "TSALACH S.A.",
+  fullName: "Development & Infrastructures",
+  /** Official lockup (transparent PNG) */
+  logoSrc: "/brand/tsalach-logo-clear.png",
+  logoClearSrc: "/brand/tsalach-logo-clear.png",
+  logoOnDarkSrc: "/brand/tsalach-logo-clear.png",
+  logoClearPngSrc: "/brand/tsalach-logo-clear.png",
+  logoNavClearSrc: "/brand/tsalach-logo-clear.png",
+  logoOpaqueSrc: "/brand/tsalach-logo-clear.png",
+  logoOfficialSrc: "/brand/tsalach-logo-source.png",
+  logoPlaquetteSrc: "/brand/tsalach-logo-clear.png",
+  coverSrc: "/media/hero-poster.jpg",
+  markSrc: "/brand/tsalach-logo-clear.png",
+  markClearSrc: "/brand/tsalach-logo-clear.png",
+  markGoldSrc: "/brand/tsalach-logo-clear.png",
+  /** Institutional mark used in presentation block (no CEO portrait yet) */
+  ceoPortraitSrc: "/brand/tsalach-logo-clear.png",
+  companyProfileSrc: "/company-profile.pdf",
+  companyProfileDownloadName: "TSALACH-Presentation-Institutionnelle.pdf",
+  website: "tsalach.ga",
+  websiteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.tsalach.ga",
+  mashalUrl: process.env.NEXT_PUBLIC_MASHAL_URL ?? "",
+  portalUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.tsalach.ga",
+  email: "tsalachdevandinfra@gmail.com",
+  phone: "+241 66 39 08 31",
+  phoneTel: "+24166390831",
+  phoneSecondary: "+229 01 97 26 14 58",
+  phoneSecondaryTel: "+2290197261458",
+  founded: null as number | null,
+  legalForm: {
+    en: "Public limited company (S.A.)",
+    fr: "Société Anonyme",
+  },
+  positioning: {
+    en: "Integrated developer & general contractor",
+    fr: "Développeur et contractant général intégré",
+  },
+  ceo: {
+    name: "TSALACH S.A.",
+    titleEn: "Institutional presentation",
+    titleFr: "Présentation institutionnelle",
+  },
+  address: {
+    en: "Razel Owendo, BP 18036, Libreville, Gabon",
+    fr: "Razel Owendo, BP 18036, Libreville, Gabon",
+  },
+  presence: {
+    en: "Gabon & International",
+    fr: "Gabon & International",
+  },
+} as const;

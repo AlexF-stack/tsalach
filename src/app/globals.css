@@ -1,0 +1,373 @@
+@import "tailwindcss";
+
+:root {
+  /* Charte logo TSALACH — noir & or */
+  --font-display: "Syne", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+
+  --bg: #fafaf8;
+  --bg-elevated: #ffffff;
+  --bg-soft: #f3f0ea;
+  --ink: #0b0b0b;
+  --muted: #5c5a54;
+  --line: rgba(11, 11, 11, 0.1);
+
+  --accent: #c69214;
+  --accent-hover: #a67912;
+  --accent-soft: #f6f0e4;
+  --accent-glow: rgba(198, 146, 20, 0.28);
+  --accent-ink: #0b0b0b;
+
+  /* Compat — gold tokens */
+  --gold: var(--accent);
+  --gold-soft: #d4af37;
+  --gold-deep: var(--accent-hover);
+  --gold-glow: var(--accent-glow);
+  --gold-wash: var(--accent-soft);
+  --gold-section: var(--accent-soft);
+
+  --black: #0b0b0b;
+  --black-soft: #1a1a1a;
+  --navy: #141414;
+  --navy-deep: #0b0b0b;
+
+  --hero-overlay: linear-gradient(
+    115deg,
+    rgba(11, 11, 11, 0.82) 0%,
+    rgba(11, 11, 11, 0.55) 48%,
+    rgba(11, 11, 11, 0.35) 100%
+  );
+  --nav-bg: rgba(250, 250, 248, 0.92);
+  --nav-on-light: rgba(255, 255, 255, 0.96);
+  --nav-on-gold: rgba(11, 11, 11, 0.94);
+
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --container: 1120px;
+  --radius: 0.85rem;
+  --shadow-soft: 0 12px 40px rgba(11, 11, 11, 0.08);
+  --shadow-card: 0 16px 48px rgba(11, 11, 11, 0.1);
+
+  --surface: var(--bg-soft);
+  --maroon: var(--accent);
+  --maroon-soft: var(--gold-soft);
+  --maroon-wash: var(--accent-soft);
+  --bg-black: var(--bg);
+  --card-black: var(--bg-elevated);
+  --gold-primary: var(--accent);
+  --gold-light: var(--gold-soft);
+  --off-white: var(--ink);
+  --text-gray: var(--muted);
+  --border: var(--line);
+  --glass: rgba(255, 255, 255, 0.86);
+}
+
+@theme inline {
+  --color-bg-black: var(--bg);
+  --color-card-black: var(--bg-elevated);
+  --color-surface: var(--surface);
+  --color-gold-primary: var(--accent);
+  --color-gold-light: var(--gold-soft);
+  --color-off-white: var(--ink);
+  --color-text-gray: var(--muted);
+  --font-display: "Syne", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.has-soft-cursor,
+html.has-soft-cursor * {
+  cursor: none !important;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 28%, white);
+  color: var(--ink);
+}
+
+.font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+}
+
+.container-tsa,
+.container-herna {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(1.15rem, 4.5vw, 2.5rem);
+}
+
+.section-pad {
+  padding-block: clamp(3.75rem, 9vw, 7rem);
+}
+
+/* Soft tinted bands — no hard cadastral grids */
+.section-gold,
+.section-blue {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+.section-gold .label-act,
+.section-blue .label-act {
+  color: var(--accent-hover);
+}
+
+.section-navy {
+  background: var(--ink);
+  color: #fff;
+}
+
+.label-act {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.label-act::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.heading-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  line-height: 1.08;
+}
+
+.text-display-xl {
+  font-size: clamp(2.4rem, 6vw, 4.25rem);
+}
+.text-display-lg {
+  font-size: clamp(2rem, 4.8vw, 3.25rem);
+}
+.text-display-md {
+  font-size: clamp(1.65rem, 3.6vw, 2.65rem);
+}
+.text-display-sm {
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+}
+
+.text-body-lg {
+  font-size: clamp(1.02rem, 1.5vw, 1.125rem);
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* Soft cards — shadow depth, no cadastral borders */
+.card-soft {
+  background: var(--bg-elevated);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+.dossier-spine {
+  border-left: none;
+  padding-left: 0;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.85rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 0.65rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  box-shadow: 0 10px 28px var(--accent-glow);
+  transition:
+    background 0.2s var(--ease),
+    transform 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.85rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 0.65rem;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 65%, transparent);
+  background: #fff;
+  color: var(--accent-hover);
+  font-weight: 700;
+  font-size: 0.92rem;
+  transition:
+    background 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    color 0.2s var(--ease);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+/* Images alignées charte or / noir */
+.img-theme {
+  filter: sepia(0.22) saturate(0.9) brightness(0.94) contrast(1.06);
+}
+
+.img-theme-frame {
+  position: relative;
+  isolation: isolate;
+}
+
+.img-theme-frame::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    160deg,
+    rgba(198, 146, 20, 0.18) 0%,
+    transparent 42%,
+    rgba(11, 11, 11, 0.28) 100%
+  );
+  mix-blend-mode: soft-light;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 200;
+  padding: 0.65rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@keyframes media-kenburns {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.12) translate3d(-1.2%, -0.8%, 0);
+  }
+}
+
+.media-kenburns {
+  animation: media-kenburns 22s var(--ease) infinite alternate;
+  will-change: transform;
+}
+
+.scroll-cue {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  opacity: 0.55;
+  animation: scroll-cue 1.8s var(--ease) infinite;
+}
+
+@keyframes scroll-cue {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0) rotate(45deg);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(6px) rotate(45deg);
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.float-soft {
+  animation: float-soft 5.5s var(--ease) infinite;
+}
+
+@media (min-width: 768px) {
+  .container-tsa,
+  .container-herna {
+    padding-inline: clamp(1.75rem, 5vw, 3rem);
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    min-height: 3rem;
+    padding: 0.85rem 1.5rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .section-pad {
+    padding-block: clamp(3rem, 12vw, 4.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media-kenburns,
+  .scroll-cue,
+  .float-soft {
+    animation: none !important;
+  }
+}

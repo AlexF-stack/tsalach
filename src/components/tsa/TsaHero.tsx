@@ -33,12 +33,12 @@ const COLLAGE = [
     delay: 0.08,
   },
   {
-    src: visuals.bridge,
+    src: visuals.civil,
     className: "bottom-[14%] left-[6%] h-[34%] w-[48%]",
     delay: 0.14,
   },
   {
-    src: visuals.africa,
+    src: visuals.building,
     className: "bottom-2 right-1 h-[40%] w-[52%]",
     delay: 0.2,
   },

@@ -3,6 +3,7 @@
 import { useDictionary } from "@/components/providers/LocaleProvider";
 import { Reveal } from "@/components/tsa/Reveal";
 
+/** Promise steps — cascade from the left */
 export function TsaPromise() {
   const dictionary = useDictionary();
 
@@ -14,7 +15,7 @@ export function TsaPromise() {
       aria-labelledby="promise-heading"
     >
       <div className="container-tsa max-w-3xl">
-        <Reveal>
+        <Reveal effect="soft">
           <p className="label-act">{dictionary.promise.label}</p>
           <h2
             id="promise-heading"
@@ -30,7 +31,7 @@ export function TsaPromise() {
         <ol className="mt-12 space-y-4">
           {dictionary.promise.steps.map((step, i) => (
             <li key={step}>
-              <Reveal delay={i * 0.05}>
+              <Reveal effect="slideRight" delay={i * 0.1}>
                 <div className="card-soft flex gap-4 bg-[color:var(--bg-soft)] p-5 sm:p-6">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[color:var(--accent)] font-display text-sm font-bold text-white shadow-[0_8px_20px_var(--accent-glow)]">
                     {String(i + 1).padStart(2, "0")}
@@ -44,7 +45,7 @@ export function TsaPromise() {
           ))}
         </ol>
 
-        <Reveal delay={0.2} className="mt-8">
+        <Reveal effect="scale" delay={0.28} className="mt-8">
           <p className="font-display text-xl font-bold tracking-wide text-[color:var(--accent)] md:text-2xl">
             {dictionary.promise.signature}
           </p>

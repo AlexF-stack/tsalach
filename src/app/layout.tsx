@@ -1,10 +1,27 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import { Manrope, Syne } from "next/font/google";
 import { brandAssets } from "@/content/brand";
 import { defaultLocale, isLocale } from "@/i18n/config";
 import { ogImage } from "@/lib/seo";
 import "./globals.css";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-manrope",
+  display: "swap",
+  preload: true,
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-syne",
+  display: "swap",
+  preload: true,
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(brandAssets.websiteUrl),
@@ -50,27 +67,9 @@ export default async function RootLayout({
     <html
       suppressHydrationWarning
       lang={lang}
-      className="light"
+      className={`light ${manrope.variable} ${syne.variable}`}
       data-theme="light"
     >
-      <head>
-        <link
-          rel="preload"
-          href={brandAssets.logoClearSrc}
-          as="image"
-          type="image/png"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body className="antialiased" suppressHydrationWarning>
         {children}
       </body>

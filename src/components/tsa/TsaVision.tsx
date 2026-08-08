@@ -3,6 +3,7 @@
 import { useDictionary } from "@/components/providers/LocaleProvider";
 import { Reveal } from "@/components/tsa/Reveal";
 
+/** Vision / mission — opposing slides + scale CTA bar */
 export function TsaVision() {
   const dictionary = useDictionary();
 
@@ -14,7 +15,7 @@ export function TsaVision() {
       aria-labelledby="identity-heading"
     >
       <div className="container-tsa">
-        <Reveal>
+        <Reveal effect="blur">
           <p className="label-act">{dictionary.identity.label}</p>
           <h2
             id="identity-heading"
@@ -25,7 +26,7 @@ export function TsaVision() {
         </Reveal>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
-          <Reveal delay={0.05}>
+          <Reveal effect="slideRight" delay={0.06}>
             <div className="card-soft h-full bg-white p-6 sm:p-8">
               <p className="font-display text-sm font-bold uppercase tracking-[0.16em] text-[color:var(--accent)]">
                 {dictionary.vision.label}
@@ -42,7 +43,7 @@ export function TsaVision() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          <Reveal effect="slideLeft" delay={0.12}>
             <div className="card-soft h-full bg-[color:var(--bg-soft)] p-6 sm:p-8">
               <p className="font-display text-sm font-bold uppercase tracking-[0.16em] text-[color:var(--accent)]">
                 {dictionary.mission.label}
@@ -68,7 +69,7 @@ export function TsaVision() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.12} className="mt-10">
+        <Reveal effect="scale" delay={0.16} className="mt-10">
           <div className="card-soft bg-[color:var(--accent)] px-6 py-8 shadow-[0_16px_48px_var(--accent-glow)] sm:px-10">
             <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-white/70">
               {dictionary.purpose.label}

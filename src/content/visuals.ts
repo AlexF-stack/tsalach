@@ -18,7 +18,7 @@ export const visuals = {
   africaCity: "/visuals/africa-city.jpg",
   engineering: "/visuals/engineering-plans.jpg",
   closing: "/visuals/africa-urban.jpg",
-  ambition: "/visuals/africa-city.jpg",
+  ambition: "/visuals/construction-site.jpg",
   bridge: "/visuals/excavator.jpg",
   road: "/visuals/city-skyline.jpg",
   crane: "/visuals/workers-site.jpg",

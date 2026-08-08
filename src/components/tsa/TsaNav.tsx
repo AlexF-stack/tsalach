@@ -136,17 +136,17 @@ export function TsaNav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-[120] pt-[env(safe-area-inset-top)] transition-[background-color,box-shadow,border-color,color] duration-300 ease-[cubic-bezier(0.2,0.8,0.2,1)] ${style.header}${shadowBoost}`}
+      className={`fixed inset-x-0 top-0 z-[120] w-full max-w-[100%] overflow-x-clip pt-[env(safe-area-inset-top)] transition-[background-color,box-shadow,border-color,color] duration-300 ease-[cubic-bezier(0.2,0.8,0.2,1)] ${style.header}${shadowBoost}`}
     >
       <div
         aria-hidden
         className="h-[3px] w-full bg-[color:var(--accent)]"
       />
 
-      <div className="mx-auto flex h-[4.25rem] max-w-[1240px] items-center justify-between gap-2 px-4 min-[380px]:gap-4 min-[380px]:px-5 min-[900px]:h-[4.75rem] min-[900px]:px-6">
+      <div className="mx-auto flex h-[4.25rem] w-full min-w-0 max-w-[1240px] items-center justify-between gap-2 px-4 min-[380px]:gap-3 min-[380px]:px-5 min-[900px]:h-[4.75rem] min-[900px]:px-6">
         <a
           href={buildHref("#hero")}
-          className="flex min-w-0 items-center gap-3"
+          className="flex min-w-0 shrink items-center gap-3"
           onClick={() => setOpen(false)}
           aria-label={`${brandAssets.holdingName} — ${dictionary.ui.backHome}`}
         >
@@ -155,7 +155,7 @@ export function TsaNav() {
               variant="nav"
               width={160}
               height={56}
-              className="h-8 w-auto max-w-[7.5rem] object-contain object-left brightness-110 drop-shadow-sm min-[380px]:h-9 min-[380px]:max-w-none sm:h-10"
+              className="h-8 w-auto max-w-[7.5rem] object-contain object-left brightness-110 drop-shadow-sm min-[380px]:h-9 sm:h-10 sm:max-w-[9.5rem]"
               priority
               alt={brandAssets.name}
             />
@@ -164,7 +164,7 @@ export function TsaNav() {
               variant="nav"
               width={160}
               height={56}
-              className="h-8 w-auto max-w-[7.5rem] object-contain object-left min-[380px]:h-9 min-[380px]:max-w-none sm:h-10"
+              className="h-8 w-auto max-w-[7.5rem] object-contain object-left min-[380px]:h-9 sm:h-10 sm:max-w-[9.5rem]"
               priority
               alt={brandAssets.name}
             />

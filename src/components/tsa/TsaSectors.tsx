@@ -19,7 +19,7 @@ export function TsaSectors() {
       aria-labelledby="sectors-heading"
     >
       <div className="container-tsa">
-        <Reveal>
+        <Reveal effect="rise">
           <p className="label-act">{dictionary.subsidiaries.label}</p>
           <h2
             id="sectors-heading"
@@ -35,8 +35,15 @@ export function TsaSectors() {
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {dictionary.subsidiaries.items.map((item, i) => {
             const src = SECTOR_VISUAL[item.id] ?? visuals.skyline;
+            const effect =
+              i % 2 === 0 ? ("slideRight" as const) : ("slideLeft" as const);
             return (
-              <Reveal key={item.id} delay={i * 0.04} className="h-full">
+              <Reveal
+                key={item.id}
+                effect={effect}
+                delay={i * 0.06}
+                className="h-full"
+              >
                 <article className="card-soft flex h-full flex-col overflow-hidden bg-white transition hover:-translate-y-0.5">
                   <div className="relative aspect-[4/3] overflow-hidden img-theme-frame">
                     <Image
@@ -66,7 +73,7 @@ export function TsaSectors() {
           })}
         </div>
 
-        <Reveal delay={0.12} className="mt-8 text-center">
+        <Reveal effect="soft" delay={0.18} className="mt-8 text-center">
           <p className="font-display text-sm text-[color:var(--muted)] md:text-base">
             {dictionary.subsidiaries.tagline}
           </p>

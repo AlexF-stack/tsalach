@@ -2,11 +2,17 @@
 
 import { useDictionary } from "@/components/providers/LocaleProvider";
 import { Reveal } from "@/components/tsa/Reveal";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useId, useState } from "react";
 
+const ease = [0.16, 1, 0.3, 1] as const;
+
+/** Advantages accordion — rise + expand panels */
 export function TsaAdvantages() {
   const dictionary = useDictionary();
   const baseId = useId();
+  const reduced = useReducedMotion();
+  const skip = reduced === true;
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
@@ -17,7 +23,7 @@ export function TsaAdvantages() {
       aria-labelledby="why-invest-heading"
     >
       <div className="container-tsa">
-        <Reveal>
+        <Reveal effect="rise">
           <p className="label-act">{dictionary.whyInvest.label}</p>
           <h2
             id="why-invest-heading"
@@ -30,18 +36,20 @@ export function TsaAdvantages() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.08} className="mt-12">
-          <div className="grid gap-8 lg:grid-cols-[14rem_1fr] lg:gap-10">
+        <div className="mt-12 grid gap-8 lg:grid-cols-[14rem_1fr] lg:gap-10">
+          <Reveal effect="blur" delay={0.06}>
             <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-[color:var(--accent)]">
               {dictionary.whyInvest.quote}
             </p>
-            <ul className="space-y-3">
-              {dictionary.whyInvest.items.map((item, i) => {
-                const open = openIndex === i;
-                const panelId = `${baseId}-panel-${i}`;
-                const buttonId = `${baseId}-btn-${i}`;
-                return (
-                  <li key={item.title} className="card-soft overflow-hidden bg-white">
+          </Reveal>
+          <ul className="space-y-3">
+            {dictionary.whyInvest.items.map((item, i) => {
+              const open = openIndex === i;
+              const panelId = `${baseId}-panel-${i}`;
+              const buttonId = `${baseId}-btn-${i}`;
+              return (
+                <Reveal key={item.title} effect="slideLeft" delay={i * 0.07}>
+                  <li className="card-soft overflow-hidden bg-white">
                     <button
                       type="button"
                       id={buttonId}
@@ -65,22 +73,39 @@ export function TsaAdvantages() {
                         {open ? "−" : "+"}
                       </span>
                     </button>
-                    {open ? (
-                      <p
-                        id={panelId}
-                        role="region"
-                        aria-labelledby={buttonId}
-                        className="max-w-2xl px-5 pb-5 pl-[3.25rem] text-sm leading-relaxed text-[color:var(--muted)] sm:px-6 md:text-base"
-                      >
-                        {item.body}
-                      </p>
-                    ) : null}
+                    <AnimatePresence initial={false}>
+                      {open ? (
+                        <motion.div
+                          key="panel"
+                          id={panelId}
+                          role="region"
+                          aria-labelledby={buttonId}
+                          initial={
+                            skip
+                              ? false
+                              : { height: 0, opacity: 0.4 }
+                          }
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={
+                            skip
+                              ? undefined
+                              : { height: 0, opacity: 0.4 }
+                          }
+                          transition={{ duration: 0.32, ease }}
+                          className="overflow-hidden"
+                        >
+                          <p className="max-w-2xl px-5 pb-5 pl-[3.25rem] text-sm leading-relaxed text-[color:var(--muted)] sm:px-6 md:text-base">
+                            {item.body}
+                          </p>
+                        </motion.div>
+                      ) : null}
+                    </AnimatePresence>
                   </li>
-                );
-              })}
-            </ul>
-          </div>
-        </Reveal>
+                </Reveal>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </section>
   );

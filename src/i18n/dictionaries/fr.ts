@@ -92,17 +92,17 @@ export const fr: Dictionary = {
     items: [
       {
         year: "01",
-        title: "Des projets bien conçus",
+        title: "Projets bien conçus",
         body: "Des solutions adaptées aux besoins réels des populations.",
       },
       {
         year: "02",
-        title: "Des financements innovants",
+        title: "Financements innovants",
         body: "Des mécanismes qui rendent les projets réalisables et soutenables.",
       },
       {
         year: "03",
-        title: "Une exécution irréprochable",
+        title: "Exécution irréprochable",
         body: "Des ouvrages livrés dans le respect des coûts, des délais et de la qualité.",
       },
     ],

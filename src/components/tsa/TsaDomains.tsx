@@ -17,7 +17,7 @@ export function TsaDomains() {
       aria-labelledby="expertise-heading"
     >
       <div className="container-tsa">
-        <Reveal>
+        <Reveal effect="blur">
           <p className="label-act">{dictionary.expertiseDomains.label}</p>
           <h2
             id="expertise-heading"
@@ -34,7 +34,12 @@ export function TsaDomains() {
           {dictionary.expertiseDomains.items.map((domain, i) => {
             const src = domainVisuals[domain.id];
             return (
-              <Reveal key={domain.id} delay={i * 0.05} className="h-full">
+              <Reveal
+                key={domain.id}
+                effect="clip"
+                delay={i * 0.1}
+                className="h-full"
+              >
                 <article className="card-soft flex h-full flex-col overflow-hidden bg-white">
                   <div className="relative aspect-[5/3] overflow-hidden bg-[color:var(--bg-soft)] img-theme-frame">
                     {src ? (
@@ -43,9 +48,8 @@ export function TsaDomains() {
                         alt=""
                         fill
                         sizes="(max-width: 768px) 100vw, 33vw"
-                        quality={70}
+                        quality={60}
                         className="img-theme object-cover"
-                        priority={i === 0}
                       />
                     ) : null}
                     <div className="absolute inset-0 z-[1] bg-gradient-to-t from-[color:var(--ink)]/75 via-[color:var(--ink)]/20 to-transparent" />

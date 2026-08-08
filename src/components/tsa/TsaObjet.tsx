@@ -38,7 +38,7 @@ export function TsaObjet() {
       aria-labelledby="objet-heading"
     >
       <div className="container-tsa">
-        <Reveal>
+        <Reveal effect="rise">
           <p className="label-act">{dictionary.divisions.actLabel}</p>
           <h2
             id="objet-heading"
@@ -56,7 +56,12 @@ export function TsaObjet() {
             const Icon = ICONS[item.id] ?? Building2;
             const src = objetVisuals[item.id] ?? item.imageSrc;
             return (
-              <Reveal key={item.id} delay={i * 0.04} className="h-full">
+              <Reveal
+                key={item.id}
+                effect="scale"
+                delay={i * 0.06}
+                className="h-full"
+              >
                 <article className="card-soft group flex h-full flex-col overflow-hidden bg-white transition hover:-translate-y-0.5 hover:shadow-[0_20px_56px_rgba(15,23,42,0.12)]">
                   <div className="relative aspect-[16/10] overflow-hidden bg-[color:var(--bg-soft)] img-theme-frame">
                     <Image
@@ -64,9 +69,8 @@ export function TsaObjet() {
                       alt=""
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                      quality={70}
+                      quality={60}
                       className="img-theme object-cover transition duration-700 group-hover:scale-105"
-                      priority={i < 2}
                     />
                     <div className="absolute inset-0 z-[1] bg-gradient-to-t from-[color:var(--ink)]/50 via-transparent to-transparent" />
                     <span className="absolute bottom-3 left-3 z-[2] inline-flex h-9 w-9 items-center justify-center rounded-[0.55rem] bg-[color:var(--accent)] text-[color:var(--accent-ink)] shadow-[0_8px_20px_var(--accent-glow)]">

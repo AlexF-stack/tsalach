@@ -2,12 +2,16 @@
 
 import { useDictionary } from "@/components/providers/LocaleProvider";
 import { Reveal } from "@/components/tsa/Reveal";
-import { useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 
+const ease = [0.16, 1, 0.3, 1] as const;
+
+/** Process timeline — stagger tabs + crossfade panel */
 export function TsaProcess() {
   const dictionary = useDictionary();
   const reduced = useReducedMotion();
+  const skip = reduced === true;
   const steps = dictionary.businessModel.steps;
   const [active, setActive] = useState(0);
   const current = steps[active] ?? steps[0];
@@ -21,7 +25,7 @@ export function TsaProcess() {
       aria-labelledby="model-heading"
     >
       <div className="container-tsa">
-        <Reveal>
+        <Reveal effect="rise">
           <p className="label-act">{dictionary.businessModel.label}</p>
           <h2
             id="model-heading"
@@ -34,7 +38,7 @@ export function TsaProcess() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.08} className="mt-12">
+        <div className="mt-12">
           <div
             className="relative"
             role="tablist"
@@ -44,9 +48,13 @@ export function TsaProcess() {
               {steps.map((step, i) => {
                 const selected = active === i;
                 return (
-                  <li
+                  <motion.li
                     key={step.title}
                     className="w-[min(15.5rem,78vw)] shrink-0 snap-start md:w-auto"
+                    initial={skip ? false : { opacity: 1, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.5, delay: i * 0.07, ease }}
                   >
                     <button
                       type="button"
@@ -88,7 +96,7 @@ export function TsaProcess() {
                         {step.title}
                       </span>
                     </button>
-                  </li>
+                  </motion.li>
                 );
               })}
             </ol>
@@ -98,21 +106,31 @@ export function TsaProcess() {
             id="process-panel"
             role="tabpanel"
             aria-labelledby={`process-tab-${active}`}
-            className="card-soft mt-8 bg-white p-6 sm:p-8"
+            className="card-soft mt-8 overflow-hidden bg-white p-6 sm:p-8"
           >
-            <p className="font-display text-xs font-bold uppercase tracking-[0.16em] text-[color:var(--accent)]">
-              {String(active + 1).padStart(2, "0")}
-            </p>
-            <h3 className="font-display mt-3 text-2xl font-semibold text-[color:var(--ink)]">
-              {current.title}
-            </h3>
-            <p className="mt-3 max-w-2xl text-base leading-relaxed text-[color:var(--muted)]">
-              {current.body}
-            </p>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current.title}
+                initial={skip ? false : { opacity: 1, x: 24 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={skip ? undefined : { opacity: 0.4, x: -16 }}
+                transition={{ duration: 0.35, ease }}
+              >
+                <p className="font-display text-xs font-bold uppercase tracking-[0.16em] text-[color:var(--accent)]">
+                  {String(active + 1).padStart(2, "0")}
+                </p>
+                <h3 className="font-display mt-3 text-2xl font-semibold text-[color:var(--ink)]">
+                  {current.title}
+                </h3>
+                <p className="mt-3 max-w-2xl text-base leading-relaxed text-[color:var(--muted)]">
+                  {current.body}
+                </p>
+              </motion.div>
+            </AnimatePresence>
           </div>
-        </Reveal>
+        </div>
 
-        <Reveal delay={0.12} className="mt-10">
+        <Reveal effect="soft" delay={0.12} className="mt-10">
           <p className="font-display max-w-3xl text-lg font-semibold italic text-[color:var(--ink)]">
             {dictionary.businessModel.quote}
           </p>

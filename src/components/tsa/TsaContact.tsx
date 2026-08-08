@@ -58,7 +58,7 @@ export function TsaContact() {
       aria-labelledby="contact-heading"
     >
       <div className="bg-[color:var(--ink)] px-6 py-16 sm:px-10 lg:px-12 lg:py-20 xl:px-16">
-        <Reveal>
+        <Reveal effect="slideRight">
           <p className="label-act text-[color:var(--accent)]">
             {dictionary.contact.actLabel}
           </p>
@@ -73,7 +73,7 @@ export function TsaContact() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.08}>
+        <Reveal effect="slideRight" delay={0.1}>
           <address className="card-soft mt-10 bg-white/5 p-6 not-italic backdrop-blur-sm sm:p-7">
             <p className="font-display text-lg font-semibold text-[color:var(--accent)]">
               {dictionary.contact.entity}
@@ -131,7 +131,7 @@ export function TsaContact() {
       </div>
 
       <div className="bg-[color:var(--accent-soft)] px-6 py-16 sm:px-10 lg:px-12 lg:py-20 xl:px-16">
-        <Reveal delay={0.06}>
+        <Reveal effect="slideLeft" delay={0.08}>
           <form
             onSubmit={onSubmit}
             className="card-soft bg-white p-6 md:p-8"

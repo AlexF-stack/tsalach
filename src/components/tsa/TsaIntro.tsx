@@ -19,7 +19,7 @@ export function TsaIntro() {
       <div className="container-tsa">
         <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-7">
-            <Reveal>
+            <Reveal effect="rise">
               <p className="label-act">
                 {dictionary.leadership.label} {dictionary.leadership.headline}
               </p>
@@ -32,7 +32,8 @@ export function TsaIntro() {
             </Reveal>
 
             <Reveal
-              delay={0.06}
+              effect="soft"
+              delay={0.08}
               className="mt-8 max-w-3xl space-y-5 sm:mt-10 sm:space-y-6"
             >
               {dictionary.leadership.paragraphs.map((paragraph) => (
@@ -46,16 +47,15 @@ export function TsaIntro() {
             </Reveal>
           </div>
 
-          <Reveal delay={0.1} className="lg:col-span-5">
+          <Reveal effect="slideLeft" delay={0.12} className="lg:col-span-5">
             <div className="card-soft relative aspect-[4/5] overflow-hidden img-theme-frame sm:aspect-[5/6] lg:aspect-[4/5]">
               <Image
                 src={visuals.architecture}
                 alt=""
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
-                quality={70}
+                quality={65}
                 className="img-theme object-cover"
-                priority
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[color:var(--ink)]/85 to-transparent p-5 sm:p-6">
                 <p className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[color:var(--accent)]">
@@ -69,7 +69,7 @@ export function TsaIntro() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.12} className="mt-14 sm:mt-16">
+        <Reveal effect="clip" delay={0.1} className="mt-14 sm:mt-16">
           <p className="label-act">{dictionary.identityCard.label}</p>
           <h3 className="heading-display mt-3 text-display-sm">
             {dictionary.identityCard.headline}

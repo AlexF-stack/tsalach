@@ -134,23 +134,23 @@ export function TsaContact() {
         <Reveal effect="slideLeft" delay={0.08}>
           <form
             onSubmit={onSubmit}
-            className="card-soft bg-white p-6 md:p-8"
+            className="card-soft bg-white p-6 ring-1 ring-[color:var(--ink)]/8 md:p-8"
             aria-label={dictionary.ui.contactForm}
           >
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-5 sm:grid-cols-2">
               <label className="block text-sm">
-                <span className="mb-2 block text-[color:var(--muted)]">
+                <span className="mb-2 block text-[0.8rem] font-semibold tracking-[0.02em] text-[color:var(--ink)]">
                   {dictionary.ui.name}
                 </span>
                 <input
                   name="name"
                   required
                   autoComplete="name"
-                  className="!rounded-[0.65rem]"
+                  placeholder={dictionary.ui.name}
                 />
               </label>
               <label className="block text-sm">
-                <span className="mb-2 block text-[color:var(--muted)]">
+                <span className="mb-2 block text-[0.8rem] font-semibold tracking-[0.02em] text-[color:var(--ink)]">
                   {dictionary.ui.email}
                 </span>
                 <input
@@ -158,19 +158,19 @@ export function TsaContact() {
                   type="email"
                   required
                   autoComplete="email"
-                  className="!rounded-[0.65rem]"
+                  placeholder={dictionary.ui.email}
                 />
               </label>
             </div>
-            <label className="mt-4 block text-sm">
-              <span className="mb-2 block text-[color:var(--muted)]">
+            <label className="mt-5 block text-sm">
+              <span className="mb-2 block text-[0.8rem] font-semibold tracking-[0.02em] text-[color:var(--ink)]">
                 {dictionary.ui.message}
               </span>
               <textarea
                 name="message"
                 rows={5}
                 required
-                className="!rounded-[0.65rem]"
+                placeholder={dictionary.ui.message}
               />
             </label>
             <input

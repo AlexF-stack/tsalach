@@ -251,6 +251,53 @@ html.has-soft-cursor * {
   color: var(--ink);
 }
 
+/* Form fields — visible borders + readable contrast */
+input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="submit"]):not([type="button"]),
+textarea,
+select {
+  display: block;
+  width: 100%;
+  min-height: 2.85rem;
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  border-radius: 0.65rem;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  box-shadow: inset 0 1px 2px rgba(11, 11, 11, 0.04);
+  transition:
+    border-color 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
+}
+
+textarea {
+  min-height: 8.5rem;
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: color-mix(in srgb, var(--ink) 42%, white);
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: color-mix(in srgb, var(--ink) 32%, transparent);
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow:
+    inset 0 1px 2px rgba(11, 11, 11, 0.04),
+    0 0 0 3px color-mix(in srgb, var(--accent) 28%, transparent);
+}
+
 /* Images alignées charte or / noir */
 .img-theme {
   filter: sepia(0.22) saturate(0.9) brightness(0.94) contrast(1.06);

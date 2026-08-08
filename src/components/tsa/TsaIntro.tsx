@@ -49,7 +49,7 @@ export function TsaIntro() {
           <Reveal delay={0.1} className="lg:col-span-5">
             <div className="card-soft relative aspect-[4/5] overflow-hidden img-theme-frame sm:aspect-[5/6] lg:aspect-[4/5]">
               <Image
-                src={visuals.building}
+                src={visuals.architecture}
                 alt=""
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"

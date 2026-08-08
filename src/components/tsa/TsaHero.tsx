@@ -24,23 +24,23 @@ const rise: Variants = {
 const COLLAGE = [
   {
     src: visuals.construction,
-    className: "left-0 top-4 h-[40%] w-[56%]",
     delay: 0,
+    area: "1 / 1 / 6 / 8",
   },
   {
     src: visuals.meeting,
-    className: "right-0 top-0 h-[34%] w-[46%]",
     delay: 0.08,
+    area: "1 / 8 / 5 / 13",
   },
   {
     src: visuals.civil,
-    className: "bottom-[14%] left-[6%] h-[34%] w-[48%]",
     delay: 0.14,
+    area: "6 / 1 / 11 / 6",
   },
   {
     src: visuals.building,
-    className: "bottom-2 right-1 h-[40%] w-[52%]",
     delay: 0.2,
+    area: "5 / 6 / 11 / 13",
   },
 ] as const;
 
@@ -128,7 +128,7 @@ export function TsaHero() {
             className="relative mt-6 aspect-[16/10] overflow-hidden rounded-[0.85rem] shadow-[0_20px_60px_rgba(0,0,0,0.35)] ring-1 ring-white/15 lg:hidden img-theme-frame"
           >
             <Image
-              src={visuals.construction}
+              src={visuals.excavator}
               alt=""
               fill
               sizes="(max-width: 1023px) 100vw, 0px"
@@ -158,34 +158,34 @@ export function TsaHero() {
         </motion.div>
 
         <motion.aside
-          className="relative mx-auto hidden h-[min(62vh,520px)] w-full max-w-lg lg:block"
+          className="relative mx-auto hidden h-[min(68vh,560px)] w-full max-w-[520px] lg:block"
           initial={reduced ? false : { opacity: 0, x: 28 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.85, delay: 0.2, ease }}
           aria-hidden
         >
-          {COLLAGE.map((card, idx) => (
-            <motion.div
-              key={card.src + card.className}
-              className={`absolute overflow-hidden rounded-[0.85rem] shadow-[0_20px_56px_rgba(0,0,0,0.4)] ring-1 ring-white/20 img-theme-frame ${card.className} ${reduced ? "" : "float-soft"}`}
-              style={
-                reduced ? undefined : { animationDelay: `${card.delay}s` }
-              }
-              initial={reduced ? false : { opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.25 + card.delay, ease }}
-            >
-              <Image
-                src={card.src}
-                alt=""
-                fill
-                sizes="(min-width: 1024px) 28vw, 0px"
-                quality={70}
-                className="img-theme object-cover"
-                priority={idx < 2}
-              />
-            </motion.div>
-          ))}
+          <div className="grid h-full grid-cols-12 grid-rows-10 gap-3">
+            {COLLAGE.map((card, idx) => (
+              <motion.div
+                key={card.src + card.area}
+                className="relative z-[1] min-h-0 overflow-hidden rounded-[0.85rem] shadow-[0_16px_48px_rgba(0,0,0,0.4)] ring-1 ring-white/20 img-theme-frame"
+                style={{ gridArea: card.area }}
+                initial={reduced ? false : { opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.25 + card.delay, ease }}
+              >
+                <Image
+                  src={card.src}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 28vw, 0px"
+                  quality={70}
+                  className="img-theme object-cover"
+                  priority={idx < 2}
+                />
+              </motion.div>
+            ))}
+          </div>
         </motion.aside>
       </div>
 

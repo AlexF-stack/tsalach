@@ -1,36 +1,51 @@
-/** Visuels institutionnels TSALACH — locaux `public/visuals` (infra / chantier / Afrique) */
+/** Visuels TSALACH — sources distinctes sur la homepage (réutilisations minimales) */
 export const visuals = {
   hero: "/visuals/hero-infra.jpg",
-  building: "/visuals/building-glass.jpg",
   construction: "/visuals/construction-site.jpg",
-  /** Ancien fichier cascade retiré du mapping — génie civil chantier */
-  bridge: "/visuals/civil-works.jpg",
-  road: "/visuals/building-glass.jpg",
-  housing: "/visuals/housing.jpg",
-  civil: "/visuals/civil-works.jpg",
-  skyline: "/visuals/africa-urban.jpg",
+  workers: "/visuals/workers-site.jpg",
   meeting: "/visuals/meeting-ppp.jpg",
+  boardroom: "/visuals/boardroom.jpg",
+  excavator: "/visuals/excavator.jpg",
+  civil: "/visuals/civil-works.jpg",
+  building: "/visuals/building-glass.jpg",
+  towers: "/visuals/modern-housing.jpg",
+  architecture: "/visuals/arch-white.jpg",
+  residences: "/visuals/residences.jpg",
+  housing: "/visuals/housing.jpg",
+  skyline: "/visuals/city-skyline.jpg",
+  dusk: "/visuals/city-dusk.jpg",
   africa: "/visuals/africa-urban.jpg",
-  crane: "/visuals/construction-site.jpg",
-  /** Plans / ingénierie — pas d’écran de code */
-  blueprint: "/visuals/engineering-plans.jpg",
+  africaCity: "/visuals/africa-city.jpg",
   engineering: "/visuals/engineering-plans.jpg",
-  closing: "/visuals/building-glass.jpg",
-  ambition: "/visuals/africa-urban.jpg",
+  closing: "/visuals/africa-urban.jpg",
+  ambition: "/visuals/africa-city.jpg",
+  bridge: "/visuals/excavator.jpg",
+  road: "/visuals/city-skyline.jpg",
+  crane: "/visuals/workers-site.jpg",
+  blueprint: "/visuals/engineering-plans.jpg",
 } as const;
 
-/** Mapping objet social → image */
+/** Métiers */
 export const objetVisuals: Record<string, string> = {
-  immobilier: visuals.housing,
-  epc: visuals.construction,
-  ppp: visuals.meeting,
+  immobilier: visuals.residences,
+  epc: visuals.workers,
+  ppp: visuals.boardroom,
   engineering: visuals.engineering,
-  "public-works": visuals.civil,
+  "public-works": visuals.excavator,
 };
 
-/** Domaines d'expertise → image */
+/** Domaines d'expertise */
 export const domainVisuals: Record<string, string> = {
-  immobilier: visuals.building,
-  infrastructures: visuals.civil,
-  ingenierie: visuals.engineering,
+  immobilier: visuals.towers,
+  infrastructures: visuals.dusk,
+  ingenierie: visuals.architecture,
+};
+
+/** Secteurs d'impact */
+export const sectorVisuals: Record<string, string> = {
+  housing: visuals.housing,
+  "public-facilities": visuals.skyline,
+  "urban-infra": visuals.building,
+  territorial: visuals.africaCity,
+  "ppp-projects": visuals.meeting,
 };

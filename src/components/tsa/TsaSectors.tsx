@@ -2,16 +2,10 @@
 
 import { useDictionary } from "@/components/providers/LocaleProvider";
 import { Reveal } from "@/components/tsa/Reveal";
-import { visuals } from "@/content/visuals";
+import { sectorVisuals, visuals } from "@/content/visuals";
 import Image from "next/image";
 
-const SECTOR_VISUAL: Record<string, string> = {
-  housing: visuals.housing,
-  "public-facilities": visuals.building,
-  "urban-infra": visuals.road,
-  territorial: visuals.africa,
-  "ppp-projects": visuals.meeting,
-};
+const SECTOR_VISUAL = sectorVisuals;
 
 export function TsaSectors() {
   const dictionary = useDictionary();
